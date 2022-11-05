@@ -103,5 +103,11 @@ USTC Research Funds of the Double First-Class Initiative(YD2350002001)
 If you find this project useful in your research, please consider citing:
 
 ```latex
-@INPROCEEDINGS{9857095,  author={Yu, Jun and Zhang, Liwen and Du, Shenshen and Chang, Hao and Lu, Keda and Zhang, Zhong and Yu, Ye and Wang, Lei and Ling, Qiang},  booktitle={2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},   title={Pseudo-label Generation and Various Data Augmentation for Semi-Supervised Hyperspectral Object Detection},   year={2022},  volume={},  number={},  pages={304-311},  doi={10.1109/CVPRW56347.2022.00045}}
+@inproceedings{yu2022pseudo,
+  title={Pseudo-Label Generation and Various Data Augmentation for Semi-Supervised Hyperspectral Object Detection},
+  author={Yu, Jun and Zhang, Liwen and Du, Shenshen and Chang, Hao and Lu, Keda and Zhang, Zhong and Yu, Ye and Wang, Lei and Ling, Qiang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={305--312},
+  year={2022}
+}
 ```
