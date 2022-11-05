@@ -1,29 +1,21 @@
-# The Implementation with MindSpore of CVPR 2022 MAVOC Challenge's Champion Proposal
-
+# The Implementation with MindSpore of CVPR 2022 SSHODC Challenge
 **Paper Link:**   https://ieeexplore.ieee.org/document/9857095/
 
 **Award certificate**
 
 <p align="left">
-  <img src="./tutorials/MAVOC_Track 1_Champion.png" width=360 />
+  <img src="./src/SSHODC-1.png" width=360 />
 </p>
 
-<p align="left">
-  <img src="./tutorials/MAVOC_Track 2_Champion.png" width=360 />
-</p>
 
 ## Introduction
-Multi-modal aerial view object classification (MAVOC) in Automatic target recognition (ATR), although an important and challenging problem, has been under studied. This paper firstly finds that fine-grained data, class imbalance and various shooting conditions preclude the representational ability of general image classification. Moreover, the MAVOC dataset has scene aggregation characteristics. By exploiting these properties, we propose Scene Clustering Based Pseudo-labeling Strategy (SCP-Label), a simple yet effective method to employ in post-processing. The SCP-Label brings greater accuracy by assigning the same label to objects within the same scene while also mitigating bias and confusion with model ensembles. Its performance surpasses the official baseline by a large margin of +20.57% Accuracy on Track 1 (SAR), and +31.86% Accuracy on Track 2 (SAR+EO), demonstrating the potential of SCP-Label as post-processing. Finally, we win the championship both on Track1 and Track2 in the CVPR 2022 Perception Beyond the Visible Spectrum (PBVS) Workshop MAVOC Challenge.
+Semi-supervised learning is a highly researched problem, but existing semi-supervised object detection frameworks are based on RGB images, and existing pre-trained models cannot be used for hyperspectral images. To overcome these difficulties, this paper first select fewer but suitable data augmentation methods to improve the accuracy of the supervised model based on the labeled training set, which is suitable for the characteristics of hyperspectral images. Next, in order to make full use of the unlabeled training set, we generate pseudo-labels with the model trained in the first stage and mix the obtained pseudo-labels with the labeled training set. Then, a large number of strong data augmentation methods are added to make the final model better. We achieve the SOTA, with an AP of 26.35, on the Semi-Supervised Hyperspectral Object Detection Challenge (SSHODC) in the CVPR 2022 Perception Beyond the Visible Spectrum Workshop, and win the first place in this Challenge.
 	
 ### Experiments Results
 
-| Backbone            | Under-sample| Augmentation Method       | Top-1 Accuracy (%) |
-|:--------------------|:------------|:------------              |:------------       |
-| Resnet50            | all data    | Rotation+Flipping+Cutmix  | 17.10              |
-| Efficientnet-b1     | all data    | Rotation+Flipping+Cutmix  | 15.88              |
-| Swin-Transformer    | all data    | Rotation+Flipping+Cutmix  | 16.88              |
-| DenseNet161         | all data    | Rotation+Flipping+Cutmix  | 18.05              |
-| MobileNetV3-large   | 1741        | Rotation+Flipping+Cutmix  | 21.30              |
+<p align="left">
+  <img src="./src/table.png" width=360 />
+</p>
 
 ## Installation
 
@@ -100,3 +92,16 @@ python eval.py --checkpoint_path xxx.ckpt
 
 ```
 
+### Acknowledgement
+
+This work is sponsored by Natural Science Foundation of China(62276242), CAAI-Huawei MindSpore Open
+Fund(CAAIXSJLJJ-2021-016B), Anhui Province Key Research and Development Program(202104a05020007), and
+USTC Research Funds of the Double First-Class Initiative(YD2350002001)
+
+### Citation
+
+If you find this project useful in your research, please consider citing:
+
+```latex
+@INPROCEEDINGS{9857095,  author={Yu, Jun and Zhang, Liwen and Du, Shenshen and Chang, Hao and Lu, Keda and Zhang, Zhong and Yu, Ye and Wang, Lei and Ling, Qiang},  booktitle={2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},   title={Pseudo-label Generation and Various Data Augmentation for Semi-Supervised Hyperspectral Object Detection},   year={2022},  volume={},  number={},  pages={304-311},  doi={10.1109/CVPRW56347.2022.00045}}
+```
