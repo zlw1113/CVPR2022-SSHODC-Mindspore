@@ -78,7 +78,7 @@ python data/RIT-HS20/annotationsjson/pseudo1.py
 python data/RIT-HS20/annotationsjson/pseudo2.py
 
 # the second stage of training
-python train.py --stage 1 
+python train.py --stage 2 
 
 ```
 
