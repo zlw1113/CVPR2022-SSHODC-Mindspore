@@ -94,7 +94,7 @@ python eval.py --checkpoint_path xxx.ckpt
 
 ### Acknowledgement
 
-This work is sponsored by Natural Science Foundation of China(62276242), CAAI-Huawei MindSpore Open
+This work is sponsored by CAAI-Huawei MindSpore Open
 Fund(CAAIXSJLJJ-2021-016B), Anhui Province Key Research and Development Program(202104a05020007), and
 USTC Research Funds of the Double First-Class Initiative(YD2350002001)
 
